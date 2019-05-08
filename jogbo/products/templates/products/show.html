@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>상세보기 페이지</h1>
+    
+    <h2>사용처: {{ product.title }}</h2>
+    <h2>출금: -{{ product.use_money }}원</h2>
+    <h2>입금: +{{ product.add_money }}원</h2>
+    <h2>잔액: 총 {{ product.money }}원</h2>
+    <h2>설명: {{ product.description }}</h2>
+  
+   
+   
+    
+    <a href="{% url 'products:edit' product.pk %}" class="btn btn-primary">수정</a>
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">삭제</a>
+        <a href="{% url 'list' %}" class="btn btn-primary">목록</a>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">아니오</button>
+              <form action="{% url 'products:delete' product.pk %}" method="POST">
+                  {% csrf_token %}
+                  <input type="submit" value="삭제" class="btn btn-primary">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

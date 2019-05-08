@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>가계부 추가</h1>
+
+<form action="{% url 'products:create' %}" method="POST">
+    {% csrf_token %}
+    <label>사용처</label><br>
+    <input type="text" name="title"/><br><br>
+
+    <label>사용 금액</label><br>
+    <input type="number" name="use_money"/><br><br>
+   
+    <label>들어온 금액</label><br>
+    <input type="number" name="add_money"/><br><br>
+   
+    <label>설명</label><br>
+    <textarea name="description"></textarea><br><br>
+
+    <input type="submit" class="btn btn-primary" value="등록">
+</form>
+
+{% endblock %}

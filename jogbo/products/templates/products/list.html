@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>가계부</h1>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">사용처</th>
+          <th scope="col">설명</th>
+          <th scope="col">입금</th>
+          <th scope="col">출금</th>
+          <th scope="col">잔액</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for item in products %}
+        <tr>
+          <th scope="row">{{ forloop.counter }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.description }}</td>
+          <td>{{ item.add_money }}</td>
+          <td>{{ item.use_money }}</td>
+          <td>{{ item.money }}</td>
+          <td><a href="{% url 'products:show' item.pk %}" class="btn btn-primary">자세히</a></td>
+        </tr>
+       {% endfor %}
+       <tr>
+          <td>총</td>
+          <td></td>
+          <td></td>
+          <td>{{add}}</td>
+          <td>{{use}}</td>
+          <td>{{now}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+<br>
+    <a href="{% url 'products:create' %}" class="btn btn-primary">추가</a>
+    
+{% endblock %}
