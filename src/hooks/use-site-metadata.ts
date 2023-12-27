@@ -17,10 +17,6 @@ const useSiteMetadata = () => {
               linkedin
             }
           }
-          menu {
-            path
-            label
-          }
           url
           title
           subtitle
