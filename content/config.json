@@ -1,0 +1,23 @@
+{
+  "title": "Blog by John Doe",
+  "url": "https://lumen.alxshelepenok.com",
+  "subtitle": "Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.",
+  "copyright": "© All rights reserved.",
+  "googleAnalyticsId": "UA-73379983-2",
+  "disqusShortname": "",
+  "postsLimit": 4,
+  "pathPrefix": "/",
+  "menu": [],
+  "author": {
+    "name": "연제훈",
+    "photo": "/photo.jpg",
+    "bio": "다각적으로 효율적인 해결 방법을 찾는 데 관심이 많습니다",
+    "contacts": {
+      "rss": "",
+      "email": "yjhoon0816@gmail.com",
+      "github": "YJHoon",
+      "linkedin": "#",
+      "medium": "@yjhoon0816"
+    }
+  }
+}
